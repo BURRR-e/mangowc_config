@@ -1,0 +1,27 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "battery", "tray"],
+
+    "custom/launcher": {
+            "format": "󰣇",
+            "tooltip": false,
+            "on-click": "wlogout -C ~/.config/mango/wlogout/style.css -l  ~/.config/m>
+            "on-click-right": "sleep 0.1s && swaync-client -t -sw",
+    },
+    "clock": {
+        "format": " {:%H:%M  󰃭 %Y-%m-%d}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-icons": ["󰕿", "󰖀", "󰕾"]
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁾", "󰁹"]
+    }
+}

@@ -1,0 +1,100 @@
+/* Catppuccin Mocha Colors */
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+@define-color text      #cdd6f4;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#custom-power,
+#workspaces,
+#window
+#layout,
+#clock,
+#tray,
+#language,
+#keymode,
+#network,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#backlight,
+#battery {
+    background-color: @base;
+    color: @text;
+    padding: 0px 10px;
+    margin: 4px 3px;
+    border-radius: 12px;
+    border: 1px solid @surface0;
+}
+
+#workspaces button {
+    color: @surface1;
+    padding: 0 6px;
+    border-radius: 6px;
+}
+
+#workspaces button.active {
+    color: @mauve;
+    background-color: @surface0;
+}
+
+#workspaces button.urgent {
+    color: @green;
+}
+
+#window {
+    color: transparent;
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+#window:hover {
+    color: @text;
+    background-color: @surface0;
+    padding: 0px 12px;
+    border-radius: 12px;
+}
+
+#custom-power { color: @red; }
+#layout { color: @pink; }
+#language { color: @blue; }
+#keymode { color: @mauve; }
+#network { color: @teal; }
+#cpu { color: @green; }
+#memory { color: @sky; }
+#temperature { color: @peach; }
+#pulseaudio { color: @sapphire; }
+#backlight { color: @yellow; }
+#clock { color: @lavender; }
+#battery { color: @maroon; }
+
+#battery.charging, #battery.plugged { color: @green; }
+#battery.warning { color: @peach; }
+#battery.critical { color: @red; }

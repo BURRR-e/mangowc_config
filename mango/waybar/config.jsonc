@@ -1,0 +1,96 @@
+{
+    "layer": "top",
+    "height": 42,
+    "spacing": 4,
+    "modules-left": [
+        "ext/workspaces",
+	"wlr/window"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "tray",
+        "network",
+//        "cpu",
+//        "memory",
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "clock",
+        "custom/power"
+    ],
+    "ext/workspaces": {
+        "format": "{name}", // Changed from {icon} to {name} to show the actual desktop number
+        "on-click": "activate"
+    },
+    "network": {
+        "interval": 2,
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-linked": " No IP ({ifname})",
+        "format-disconnected": " Disconnected",
+        "tooltip-format": "{ipaddr}/{cidr} via {gwaddr}",
+        "format-alt": "↓{bandwidthDownBytes} ↑{bandwidthUpBytes}"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "format": " {:%I:%M %p}",
+        "format-alt": " {:L%A, %b %d}",
+        "tooltip-format": "{:%Y}"
+    },
+    "cpu": {
+        "interval": 2,
+        "format": " {load}%"
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰖔", "󰖨"],
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "tooltip": false,
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+	"on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer -i 2",
+        "on-scroll-down": "pamixer -d 2",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+    "custom/power": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "wlogout -C ~/.config/mango/wlogout/style.css -l  ~/.config/m>",
+        "on-click-right": "sleep 0.1s && swaync-client -t -sw",
+    },
+	"wlr/window": {
+        "format": "{title}"
+    }
+}

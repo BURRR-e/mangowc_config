@@ -1,0 +1,188 @@
+```css
+/* Catppuccin Mocha Colors */
+@define-color base      #1e1e2e;
+@define-color mantle    #181825;
+@define-color crust     #11111b;
+@define-color text      #cdd6f4;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+
+@define-color blue      #89b4fa;
+@define-color lavender  #b4befe;
+@define-color sapphire  #74c7ec;
+@define-color sky       #89dceb;
+@define-color teal      #94e2d5;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color peach     #fab387;
+@define-color maroon    #eba0ac;
+@define-color red       #f38ba8;
+@define-color mauve     #cba6f7;
+@define-color pink      #f5c2e7;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* Main module pills */
+#custom-power,
+#mango-workspaces,
+#mango-layout,
+#mango-language,
+#mango-keymode,
+#tray,
+#network,
+#cpu,
+#memory,
+#temperature,
+#pulseaudio,
+#backlight,
+#battery,
+#clock {
+    background-color: @base;
+    color: @text;
+    padding: 0px 12px;
+    margin: 4px 3px;
+    border-radius: 12px;
+    border: 1px solid @surface0;
+}
+
+/* Mango workspaces container */
+#mango-workspaces {
+    padding: 0px 4px;
+}
+
+/* Individual workspace pills */
+#mango-workspaces button {
+    background-color: transparent;
+    color: @surface1;
+    padding: 2px 9px;
+    margin: 3px 2px;
+    border-radius: 999px;
+    min-width: 16px;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+#mango-workspaces button:hover {
+    background-color: @surface0;
+    color: @text;
+}
+
+/* Active workspace */
+#mango-workspaces button.active {
+    background-color: @mauve;
+    color: @crust;
+    padding-left: 11px;
+    padding-right: 11px;
+}
+
+/* Urgent workspace */
+#mango-workspaces button.urgent {
+    background-color: @red;
+    color: @crust;
+}
+
+/* Layout */
+#mango-layout {
+    color: @pink;
+}
+
+/* Language */
+#mango-language {
+    color: @blue;
+}
+
+/* Key mode */
+#mango-keymode {
+    color: @mauve;
+}
+
+/* Network */
+#network {
+    color: @teal;
+}
+
+/* CPU */
+#cpu {
+    color: @green;
+}
+
+/* Memory */
+#memory {
+    color: @sky;
+}
+
+/* Temperature */
+#temperature {
+    color: @peach;
+}
+
+#temperature.critical {
+    color: @red;
+}
+
+/* Audio */
+#pulseaudio {
+    color: @sapphire;
+}
+
+/* Brightness */
+#backlight {
+    color: @yellow;
+}
+
+/* Battery */
+#battery {
+    color: @maroon;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @green;
+}
+
+#battery.warning {
+    color: @peach;
+}
+
+#battery.critical {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Clock */
+#clock {
+    color: @lavender;
+}
+
+/* Tray */
+#tray {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Power */
+#custom-power {
+    color: @red;
+}
+
+/* Blink animation */
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @crust;
+    }
+}
+```
